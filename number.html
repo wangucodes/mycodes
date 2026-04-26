@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input id="Wangu" type="number" min="100" max="300" required>
+        <button onclick="myfunction()">OK!</button>
+        <p id="result"></p>
+        <script>
+            function myfunction() {
+                var a = document.getElementById("Wangu");
+                if(!a.checkValidity()) {
+                    document.getElementById("result").innerHTML = a.validationMessage;
+                } else {
+                    document.getElementById("result").innerHTML = "input OK";
+                }
+            }
+        </script>
+    </body>
+</html>
