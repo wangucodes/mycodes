@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function validateform() {
+                var x = document.forms["myform"]["fname"].value;
+                if (x == "") {
+                    alert("name must be filled out");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" onsubmit="return validateform()">
+            Name <input type="text" name="fname">
+            <input type="submit" value="Submit">
+<p id="message"></p>
+        </form>
+    </body>
+</html>
