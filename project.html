@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+    <!-- My CSS -->
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+
+    <script src="https://kit.fontawesome.com/996973c893.js">
+
+    </script>
+
+    <!-- Google Fonts -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800&family=Roboto+Slab:wght@200;400;600;900&display=swap"
+        rel="stylesheet" />
+
+    <title>My Portfolio</title>
+<style>
+    body{
+        background: linear-gradient(135deg, #667eea 0, #764ba2 100%);
+        font-family: 'Roboto slab', serif;
+    }
+    .about{
+        background-color:rgba(0,0,0,0.6) ;
+        border-radius:15px ;
+        margin-top:50px ;
+    }
+    .m-heading{
+        font-size:2.5rem ;
+        font-weight:700 ;
+        margin:20px 0 ;
+    }
+    .btn-outline-warning{
+        border-width:2px ;
+        font-weight: 600;
+        padding: 10px 30px;
+        transition: all 0.3s ease;
+    }
+    .btn-outline-warning:hover{
+        background-color: #ffc107;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+    <div id="about" class="container about p-5">
+        <div class="row">
+            <div class="col-6">
+                <img src="data:image/jpeg;base64,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" class="img-fluid"/>
+            </div>
+            <div class="col-6" p1-5 pt-5 pb-5 text-white>
+                <h3 class="text-warning">About codingal</h3>
+                <h1 class=",-heading">what to know about codingal</h1>
+                <p>
+                    <b class="text-warning">Codingal</b>is on a mssion to inspire school kids to <b class="text-warning">fall in love with coding</b>.Coding helps with development in logical thinking and problem solving skills.Coding are the jobs of the future. 60% of coding already contributes to career paths such as enginerring, math, technology and science. Starting young, kids be ahead of others by college level.They will be<b class="text-warning">creations of the future</b>
+                </p>
+            </br>
+            <p>
+                In today's age, <b class="text-warning">coding</b> has become an essential.Coding helps kids interact with technology better.Studies show that it improves holistic environment of the child and helps with logical thinking.
+                            </p>
+                            <button class="btn btn-outline-warning">Learn more</button>
+            </div>
+        </div>
+    </div>
+</body>
