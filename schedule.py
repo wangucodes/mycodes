@@ -1,0 +1,37 @@
+student_profile = ("Alvin","grade 10", "section A", 6)
+print("student profile:", student_profile)
+student_name = student_profile[0]
+grade = student_profile[1]
+section = student_profile[2]
+total_subjects = student_profile[3]
+print("\nStudent name:", student_name)
+print("Grade:", grade)
+print("Section:",section)
+print("total subjects:", total_subjects)
+print("First two details:", student_profile[0:2])
+monday_subjects = {"French", "math", "arts", "P.E", "computers", "physics"}
+tuesday_subjects = {"biology", "business", "english", "math", "chemistry"}
+print("\nmonday subjects:", monday_subjects)
+print("tuesday subjects:", tuesday_subjects)
+monday_subjects.add("Music")
+print("\nAfter adding Music to monday:", monday_subjects)
+monday_subjects.discard("french")
+print("after removing French:", monday_subjects)
+tuesday_subjects.add("geography")
+print("after adding geography to tuesday:", tuesday_subjects)
+tuesday_subjects.discard("business")
+print("after removing business:", tuesday_subjects)
+all_subjects = monday_subjects.union(tuesday_subjects)
+common_subjects = monday_subjects.intersection(tuesday_subjects)
+only_monday = monday_subjects.difference(tuesday_subjects)
+only_tuesday = tuesday_subjects.difference(monday_subjects)
+print("\n = 32")
+print("School Subject Summary Planner")
+print("================================")
+print("student:", student_name)
+print("Grade:", grade)
+print("monday subjects:", monday_subjects)
+print("tuesday subjects:", tuesday_subjects)
+print("subjects taken on both days:", common_subjects)
+print("All unique subjects:", all_subjects)
+print("================================")
