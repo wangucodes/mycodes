@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>school event data viewer</title>
+        <style>
+            body{
+                font-family: arial, sans-serif;
+                background-color: #f3f7ff;
+                color: #222222;
+                text-align: center;
+            }
+
+            .event-card {
+                width: 520px;
+                background-color: white;
+                border: 3px solid #3b82f6;
+                border-radius: 18px;
+                margin: 40px auto;
+                padding: 25px;
+                box-shadow: 0 0 18px #93c5fd;
+            }
+
+            h1{
+                color: #1d4ed8;
+            }
+
+            button {
+                background-color: #2563eb;
+                color:white;
+                border: none;
+                border-radius: 25px;
+                padding: 12px 25px;
+                font-size: 16px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            button:hover{
+                color: #1e40af;
+            }
+
+            .info-box{
+                background-color: #eff6ff;
+                border: 2px dashed #60a5fa;
+                border-radius: 12px;
+                margin-top: 18px;
+                padding: 15px;
+                text-align: left;
+                line-height: 1.7;
+            }
+
+            #status{
+                color: #16a34a;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            #jsonOutput{
+                color: #7c2d12;
+                font-size: 14px;
+                word-wrap: break-word;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="event-card">
+            <h1>school event data viewer</h1>
+            <P>
+                click the button to load school event details! :D
+            </P>
+            <button onclick="showschoolevent()">load event details</button>
+            <div class="info-box">
+                <h2>loading status</h2>
+                <p id="status">loading school event data...</p>
+            </div>
+            <div class="info-box">
+                <h2>event details</h2>
+                <p id="eventDetails"></p>
+            </div>
+            <div class="info-box">
+                <h2>JSON text output</h2>
+                <p id="jsonOutput"></p>
+            </div>
+
+        </div>
+        <script>
+            // callback function
+            function showloadingmessage(message){
+                document.getElementById("status").innerHTML = message;
+            }
+            //promise in javascript
+            function fetchschooleventdata(callback){
+                callback("loading school event data...please wait...");
+                return new promise(function(resolve) {
+                    //asynchronous javascript using setTimeout()
+                    setTimeout(function() {
+                        //JSON data
+                        let schoolevent = {
+                            eventtime : "annual science fair",
+                            date : "25 august 2026",
+                            time : "10 am",
+                            venue: "school auditorium",
+                            coordinator : "ms.priya",
+                            participants :120,
+                            isregistrationopen : true
+                        };
+                        resolve(schoolevent);
+                    }, 2000);
+                });
+            }
+            //async/await in javascript
+            async function showschoolevent() {
+                let eventdata = await fetchschooleventdata(showloadingmessage);
+                document.getElementById("status").innerHTML = "Event data loaded successfully!";
+                // JSON.stringify()
+                let jsontext = JSON.springify(eventdata);
+                //JSON.parse()
+                let parsedevent = json.parse(jsontext);
+                //string concatentation to build the final display messagelet eventmessage = "";
+                eventMessage = eventMessage + "Date: " + parsedEvent.date + "<br";
+                eventMessage = eventMessage + "Time: " + parsedEvent.time + "<br";
+                eventMessage = eventMessage + "venue: " + parsedEvent.venue + "<br";
+                eventMessage = eventMessage + "coordinator: " + parsedEvent.coordinator + "<br";
+                eventMessage = eventMessage + "participants: " + parsedEvent.participants + "<br";
+                if (parsed.isregistrationopen === true) {
+                    eventMessage = eventMessage + "Registration status: open";
+                } else{
+                    eventMessage = eventMessage + "Registration status: closed";
+                }
+                document.getElementById("eventDetails").innerHTML = eventMessage;
+                document.getElementById("jsonOutput").innerHTML = jsontext;
+            }
+        </script>
+    </body>
+</html>
